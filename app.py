@@ -64,7 +64,7 @@ if OPENAI_API_KEY:
         embeddings = OpenAIEmbeddings(openai_api_key=OPENAI_API_KEY)
         docsearch = FAISS.from_texts(texts, embedding = embeddings)
 
-        question = question = st.text_input('Ask any question', key="input")
+        question = st.text_input('Ask any question', key="input")
 
         if question:
             docs = docsearch.similarity_search(query=question)
